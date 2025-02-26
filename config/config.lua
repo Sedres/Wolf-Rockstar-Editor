@@ -1,0 +1,3 @@
+Config = {
+    languale = 'EN',
+}
