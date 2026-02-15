@@ -166,6 +166,16 @@ const HandleClick = (buttonKey) => {
 
 const handleConfirm = () => {
   dialogVisible.value = true
+  editorOpen.value = false
+  console.log('handleConfirm', editorOpen.value)
+  api.post('closeEditor').catch(() => {
+    sendNotify({
+      message: store.locales.notifications.error,
+      type: 'error',
+      icon: 'fa-solid fa-circle-exclamation',
+      timeout: 5000
+    })
+  })
 
   api.post('openEditor').catch(() => {
     sendNotify({

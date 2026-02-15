@@ -84,6 +84,12 @@ RegisterNUICallback('buttonClick', function(data, cb)
     end
 end)
 
+RegisterNUICallback('closeEditor', function(data, cb)
+    SetNuiFocus(false, false)
+    cb('ok')
+end)
+
+
 RegisterNUICallback('openEditor', function(data, cb)
     SetNuiFocus(false, false)
     ActivateRockstarEditor()
